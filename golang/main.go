@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -24,10 +25,11 @@ func main() {
 
 	fmt.Print("Go: Writing to file...")
 
+	arr := make([]string, lines)
 	for i := 0; i < lines; i++ {
-		f.WriteString("line " + strconv.Itoa(i))
+		arr[i] = "line " + strconv.Itoa(i) + "\n"
 	}
-
+	f.WriteString(strings.Join(arr, ""))
 	end_time := time.Now().UnixNano()
 
 	fmt.Printf("\rGo: Time taken to write %v lines to file: %vms\n", lines, (end_time-start_time)/1000000)

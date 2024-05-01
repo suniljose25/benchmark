@@ -16,7 +16,7 @@ public class Main {
         try {
             var time = new Date().getTime();
             
-            System.out.println("Writing to file...");
+            System.out.print("Java: Writing to file...");
             
             BufferedWriter writer = new BufferedWriter(new FileWriter(File.createTempFile("random_java.txt", null)));
             Random random = new Random();
@@ -25,7 +25,7 @@ public class Main {
                 writer.newLine();
             }
             writer.close();
-            System.out.println("Java: Time taken to write " + LINES + " lines to file: " + (new Date().getTime() - time) + "ms");
+            System.out.println("\rJava: Time taken to write " + LINES + " lines to file: " + (new Date().getTime() - time) + "ms");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -22,7 +22,7 @@ func main() {
 	}
 	defer f.Close()
 
-	fmt.Println("Writing to file...")
+	fmt.Print("Go: Writing to file...")
 
 	for i := 0; i < lines; i++ {
 		f.WriteString("line " + strconv.Itoa(i))
@@ -30,5 +30,5 @@ func main() {
 
 	end_time := time.Now().UnixNano()
 
-	fmt.Printf("Go: Time taken to write %v lines to file: %vms\n", lines, (end_time-start_time)/1000000)
+	fmt.Printf("\rGo: Time taken to write %v lines to file: %vms\n", lines, (end_time-start_time)/1000000)
 }

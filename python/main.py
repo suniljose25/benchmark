@@ -12,8 +12,10 @@ start_time = time.time()
 print('Python: Writing to file...', end='')
 
 with tempfile.TemporaryFile("+w") as f:
+    arr = []
     for i in range(LINES):
-        f.write(str(random.randint(1, 1000)) + '\n')
+        arr.append(str(random.randint(1, 1000)) + '\n')
+    f.write("".join(arr))
 
     #print end time of the script
     difference = time.time() - start_time

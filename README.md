@@ -15,3 +15,9 @@ For the first time, mise will say that the languages are missing, then please ru
 | Java | 21 |
 | Python | 3.12 |
 | Go | 1.22 |
+
+## Run benmarks
+In order to run the benchmark, cd into the language folder and execute the `run.sh` file.
+Eg.
+`cd java`
+`./run.sh`

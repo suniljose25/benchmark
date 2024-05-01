@@ -11,22 +11,24 @@ import (
 )
 
 func main() {
-	f, err := os.Create("random_text_go.txt")
+	lines := 10_000_000
+
+	start_time := time.Now().UnixNano()
+
+	f, err := os.CreateTemp("", "random_text_go.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	defer f.Close()
 
-	start_time := time.Now().UnixNano()
+	fmt.Println("Writing to file...")
 
-	fmt.Println("Writing to file")
-
-	for i := 0; i < 10000000; i++ {
+	for i := 0; i < lines; i++ {
 		f.WriteString("line " + strconv.Itoa(i))
 	}
 
 	end_time := time.Now().UnixNano()
 
-	fmt.Println("Time taken to write 10000000 lines to file: ", (end_time-start_time)/1000000, "ms")
+	fmt.Printf("Go: Time taken to write %v lines to file: %vms\n", lines, (end_time-start_time)/1000000)
 }

@@ -1,8 +1,8 @@
 # cd golang
-(cd golang;./run.sh)
+(cd golang;sh run.sh)
 
 # cd ../java
-(cd java;./run.sh)
+(cd java;sh run.sh)
 
 # cd ../python
-(cd python;./run.sh)
+(cd python;sh run.sh)

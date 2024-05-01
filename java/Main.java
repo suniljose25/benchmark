@@ -20,10 +20,12 @@ public class Main {
             
             BufferedWriter writer = new BufferedWriter(new FileWriter(File.createTempFile("random_java.txt", null)));
             Random random = new Random();
+            StringBuffer sb = new StringBuffer();
             for (int i = 0; i < LINES; i++) {
-                writer.write(String.valueOf(random.nextInt(1000)));
-                writer.newLine();
+                sb.append(String.valueOf(random.nextInt(1000)))
+                .append('\n');
             }
+            writer.write(sb.toString());
             writer.close();
             System.out.println("\rJava: Time taken to write " + LINES + " lines to file: " + (new Date().getTime() - time) + "ms");
         } catch (IOException e) {
